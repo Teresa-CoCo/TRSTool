@@ -20,7 +20,7 @@ void main(void)
     {
         printf("欢迎使用TRSToolV5.5 beta版\n");
         sleep(2);//In linux sleep count as second instead of msec
-        printf("请输入你要使用的功能：\n1.转换长度工具(已修复)  2.转换鞋码工具 (已修复) 3.BMI健康指数计算工具（已修复，需要验证） 4.多功能电表（已修复） 5.幸运数字与运势（已修复） 6.excel快查（功能被删除，后续添加新功能替代）7.二进制十进制互转8.运行hyperv开机bat（beta v2）(需联网)9.扫雷游戏（鸣谢@Hannnine）(新)10.链接ssh服务（新）");
+        printf("请输入你要使用的功能：\n1.转换长度工具(已修复)  2.转换鞋码工具 (已修复) 3.BMI健康指数计算工具（已修复，需要验证） 4.多功能电表（已修复） 5.幸运数字与运势（已修复） 6.excel快查（功能被删除，后续添加新功能替代）7.二进制十进制互转8.运行hyperv开机bat（被移除)9.扫雷游戏（鸣谢@Hannnine）(新)10.链接ssh服务（新）");
         scanf("%d",&grate);
         if (grate == 1)
         {
