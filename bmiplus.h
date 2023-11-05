@@ -6,17 +6,17 @@ void bmicalculator(void)
     int panduan;
     float nuh, yuhu;
 
-    printf("�������������:\n");
+    printf("请输入您的身高（cm）:\n");
     scanf("%f", &height);
 
     standardheight = height / 100;
 
-    printf("��������Ϊ%f��\n", standardheight);
+    printf("您的身高是Ϊ%f米\n", standardheight);
 
-    printf("���������أ�\n");
+    printf("请输入您的体重：\n");
     scanf("%f", &weight);
 
-    printf("��ѡ�������������صĵ�λ��1.���2.�н�\n");
+    printf("请输入您刚才输入体重的单位：\n1.斤 2.千克（公斤）\n");
     scanf("%d", &panduan);
 
     if (panduan == 2)
@@ -29,11 +29,11 @@ void bmicalculator(void)
     }
     else
     {
-        printf("������������������ִ�С�\n");
+        printf("您输入有误，请重新执行本程序\n");
         //return 0;
     }
 
-    printf("��������Ϊ%f kg\n", standardweight);
+    printf("您的体重是%f kg\n", standardweight);
 
     yuhu = standardheight * standardheight;
 
@@ -44,19 +44,19 @@ void bmicalculator(void)
 
     if (nuh < 18.5)
     {
-        printf("���ع���\n");
+        printf("营养不良\n");
     }
     else if (18.5 <= nuh && nuh < 24)
     {
-        printf("�������أ����������\n");
+        printf("有点瘦\n");
     }
     else if (24 <= nuh && nuh < 27)
     {
-        printf("���ع�����\n");
+        printf("正常区间\n");
     }
     else if (nuh >= 27)
     {
-        printf("���س�����\n");
+        printf("有点胖\n");
     }
 
     //return 0;
