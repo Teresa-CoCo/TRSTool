@@ -1,15 +1,17 @@
 #include<stdio.h>
-#include<windows.h>
+#include<stdlib.h>
+#include<time.h>
+// #include<windows.h>
 #include<time.h>
 void lucky() {
-    SetConsoleOutputCP(65001);
+    // SetConsoleOutputCP(65001);
     int randomnumber,luckynumber;
     printf("欢迎使用幸运数程序\n快来看看你今天的幸运数字是几！\n");
-    Sleep(1000);
+    sleep(1);
     printf("请稍等，正在初始化程序。\n");
-    Sleep(3000);
+    sleep(3);
     printf("生成随机种子中\n");
-    Sleep(4000);
+    sleep(4);
 
     srand(time(NULL)); // 使用当前时间作为随机数种子
     randomnumber = rand() % 9 + 1; // 生成 1 和 9 之间的随机数
@@ -24,13 +26,13 @@ void lucky() {
     if (lucky == 1)
     {
         printf("感谢您对本系统的认可\n");/* code */
-        Sleep(1000);
+        sleep(1);
         printf("正在为您观察星象，请稍后\n");
-        Sleep(2000);
+        sleep(2);
         printf("可能需要一些额外时间，请耐心等待一下\n");
-        Sleep(3000);
+        sleep(3);
         printf("经系统夜以继日的判断，您今天的运势为：\n");
-        Sleep(2000);
+        sleep(2);
         luckynumber = rand() % 10 + 1;//生成1-10的随机数
         if (luckynumber == 1)
         {
@@ -75,8 +77,8 @@ void lucky() {
         
         printf("\n吉利程度从大到小为：\n大吉、中吉、小吉、吉、半吉、末吉、凶、半凶、小凶、大凶\n如果你是大吉快分享给你的朋友吧！");
 
-        Sleep(5000);
-        return 0;
+        sleep(5);
+        // return 0;
         
         
         
@@ -88,5 +90,5 @@ void lucky() {
         
     }
     
-    return 0;
+    // return 0;
 }
