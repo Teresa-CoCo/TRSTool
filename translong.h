@@ -1,9 +1,9 @@
 #include<stdio.h>
-#include<windows.h>
+// #include<windows.h>
 
 void translong(void)
 {
-    SetConsoleOutputCP(65001);
+    // SetConsoleOutputCP(65001);
     float chose,input,calculate,mile,foot,meter,inch,yard; //init things
 
     printf("欢迎使用长度换算系统工具\n");
