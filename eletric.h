@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include<windows.h>
+// #include<windows.h>
 #include<time.h>
 
 // void Post();
@@ -18,7 +18,7 @@
 
 void electric(void)
 {
-    SetConsoleOutputCP(65001);
+    // SetConsoleOutputCP(65001);
     printf("欢迎使用万能表\n");
     //int volt,anpei;
     int dangwei;

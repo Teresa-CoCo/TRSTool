@@ -4,7 +4,7 @@
 #include</workspaces/TRSTool/translong.h>
 #include</workspaces/TRSTool/shoesize.h>
 #include</workspaces/TRSTool/bmiplus.h>
-// #include<D:\Develop\TRSTool\TRSTool\eletric.h>
+#include</workspaces/TRSTool/eletric.h>
 // #include<D:\Develop\TRSTool\TRSTool\lucky.h>
 // #include<D:\Develop\TRSTool\TRSTool\excel.h>
 // #include<D:\Develop\TRSTool\TRSTool\twobit.h>
@@ -20,7 +20,7 @@ void main(void)
     {
         printf("欢迎使用TRSToolV5.5 beta版\n");
         sleep(2);//In linux sleep count as second instead of msec
-        printf("请输入你要使用的功能：\n1.转换长度工具(已修复)  2.转换鞋码工具 (已修复) 3.BMI健康指数计算工具（已修复，需要验证） 4.多功能电表 5.幸运数字与运势 6.excel快查7.二进制十进制互转8.运行hyperv开机bat（beta v2）(需联网)9.扫雷游戏（鸣谢@Hannnine）(新)10.链接ssh服务（新）");
+        printf("请输入你要使用的功能：\n1.转换长度工具(已修复)  2.转换鞋码工具 (已修复) 3.BMI健康指数计算工具（已修复，需要验证） 4.多功能电表（已修复） 5.幸运数字与运势 6.excel快查7.二进制十进制互转8.运行hyperv开机bat（beta v2）(需联网)9.扫雷游戏（鸣谢@Hannnine）(新)10.链接ssh服务（新）");
         scanf("%d",&grate);
         if (grate == 1)
         {
@@ -34,10 +34,10 @@ void main(void)
         {
             bmicalculator();
         }
-        // else if (grate == 4)
-        // {
-        //     electric();
-        // }
+        else if (grate == 4)
+        {
+            electric();
+        }
         // else if (grate == 5)
         // {
         //     lucky();
