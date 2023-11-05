@@ -1,10 +1,10 @@
 //This Project aims to help you to calculate your shoesize to your country's common shoes' size.
 #include<stdio.h> //common
-#include<windows.h>
+// #include<windows.h>
 
 void transshoe(void){
     int input;
-    SetConsoleOutputCP(65001);
+    // SetConsoleOutputCP(65001);
     float test,europe,usa,eng,china,temp,linshi;
 
     printf("欢迎使用鞋子尺码换算工具");
