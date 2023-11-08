@@ -1,8 +1,8 @@
-#include "D:\Develop\CLanguageLearning-2\C_Primer_Plus\game\gameset.h"
+#include "/workspaces/TRSTool/gameset.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <Windows.h>
+// #include <Windows.h>
 
 void IniBoard(char Board[ROWS][COLS], char set) {
 	for (int i = 1; i <= ROW; i++) {

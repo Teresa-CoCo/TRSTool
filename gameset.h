@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 #include <time.h>
-#include <Windows.h>
+// #include <Windows.h>
 
 #define ROW 9
 #define COL 9

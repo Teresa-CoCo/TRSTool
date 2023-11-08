@@ -1,5 +1,5 @@
-#include "D:\Develop\CLanguageLearning-2\C_Primer_Plus\game\gameset.h"
-#include "D:\Develop\CLanguageLearning-2\C_Primer_Plus\game\gamecode.h"
+#include "/workspaces/TRSTool/gameset.h"
+#include "/workspaces/TRSTool/shoesize.h"
 #include<stdio.h>
 
 void game() {
@@ -33,7 +33,7 @@ void menu() {
 }
 
 int wansaolei() {
-	SetConsoleOutputCP(65001);
+	// SetConsoleOutputCP(65001);
 	int uipt;
 	srand((unsigned int)time(NULL));
 	do {

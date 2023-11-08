@@ -1,16 +1,17 @@
 #include<stdio.h>
 // #include<windows.h>
 #include<time.h>
+#include<math.h>
 #include</workspaces/TRSTool/translong.h>
 #include</workspaces/TRSTool/shoesize.h>
 #include</workspaces/TRSTool/bmiplus.h>
 #include</workspaces/TRSTool/eletric.h>
 #include</workspaces/TRSTool/lucky.h>
 // #include<D:\Develop\TRSTool\TRSTool\excel.h>
-// #include<D:\Develop\TRSTool\TRSTool\twobit.h>
+// #include</workspaces/TRSTool/twobit.h>
 // #include<D:\Develop\TRSTool\TRSTool\hyperv2.h>
-// #include<D:\Develop\TRSTool\TRSTool\saolei.h>
-// #include<D:\Develop\TRSTool\TRSTool\ssh.h>
+#include</workspaces/TRSTool/saolei.h>
+// #include</workspaces/TRSTool/TRSTool\ssh.h>
 void main(void)
 {
     int grate;
@@ -20,7 +21,7 @@ void main(void)
     {
         printf("欢迎使用TRSToolV5.5 beta版\n");
         sleep(2);//In linux sleep count as second instead of msec
-        printf("请输入你要使用的功能：\n1.转换长度工具(已修复)  2.转换鞋码工具 (已修复) 3.BMI健康指数计算工具（已修复，需要验证） 4.多功能电表（已修复） 5.幸运数字与运势（已修复） 6.excel快查（功能被删除，后续添加新功能替代）7.二进制十进制互转8.运行hyperv开机bat（被移除)9.扫雷游戏（鸣谢@Hannnine）(新)10.链接ssh服务（新）");
+        printf("请输入你要使用的功能：\n1.转换长度工具(已修复)  2.转换鞋码工具 (已修复) 3.BMI健康指数计算工具（已修复，需要验证） 4.多功能电表（已修复） 5.幸运数字与运势（已修复） 6.excel快查（功能被删除，后续添加新功能替代）7.二进制十进制互转(需要修复)8.运行hyperv开机bat（被移除)9.扫雷游戏（鸣谢@Hannnine）(需要修复)");
         scanf("%d",&grate);
         if (grate == 1)
         {

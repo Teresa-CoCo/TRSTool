@@ -2,7 +2,7 @@
 #include<stdio.h> //common
 // #include<windows.h>
 
-void transshoe(void){
+int transshoe(){
     int input;
     // SetConsoleOutputCP(65001);
     float test,europe,usa,eng,china,temp,linshi;
