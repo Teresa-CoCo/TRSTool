@@ -10,7 +10,7 @@
 // #include<D:\Develop\TRSTool\TRSTool\excel.h>
 // #include</workspaces/TRSTool/twobit.h>
 // #include<D:\Develop\TRSTool\TRSTool\hyperv2.h>
-#include</workspaces/TRSTool/saolei.h>
+// #include</workspaces/TRSTool/saolei.h>
 // #include</workspaces/TRSTool/TRSTool\ssh.h>
 void main(void)
 {

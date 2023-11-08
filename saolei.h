@@ -1,5 +1,5 @@
 #include "/workspaces/TRSTool/gameset.h"
-#include "/workspaces/TRSTool/shoesize.h"
+#include "/workspaces/TRSTool/gamecode.h"
 #include<stdio.h>
 
 void game() {
