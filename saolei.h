@@ -1,7 +1,7 @@
 #include "/workspaces/TRSTool/gameset.h"
 #include "/workspaces/TRSTool/gamecode.h"
 #include<stdio.h>
-
+#include <stdlib.h>
 void game() {
 	//��������
 	char InnerBoard[ROWS][COLS] = { 0 };

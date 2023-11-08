@@ -57,7 +57,7 @@ void FindMine(char InnerBoard[ROWS][COLS], char OutBoard[ROWS][COLS], int row, i
 	int win = 0;
 	do {
 		printf("你想查哪个坐标 比如说：1 1\n");
-		scanf_s("%d %d", &x, &y);
+		scanf("%d %d", &x, &y);
 		if (x >= 1 && x <= ROW && y >= 1 && y <= COL) {
 			if (InnerBoard[x][y] == '1') {
 				printf("你被炸死了!\n");

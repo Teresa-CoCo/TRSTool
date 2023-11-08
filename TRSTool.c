@@ -10,7 +10,7 @@
 // #include<D:\Develop\TRSTool\TRSTool\excel.h>
 #include</workspaces/TRSTool/twobit.h>
 // #include<D:\Develop\TRSTool\TRSTool\hyperv2.h>
-// #include</workspaces/TRSTool/saolei.h>
+#include</workspaces/TRSTool/saolei.h>
 // #include</workspaces/TRSTool/TRSTool\ssh.h>
 void main(void)
 {
@@ -21,7 +21,7 @@ void main(void)
     {
         printf("欢迎使用TRSToolV5.5 beta版\n");
         sleep(2);//In linux sleep count as second instead of msec
-        printf("请输入你要使用的功能：\n1.转换长度工具(已修复)  2.转换鞋码工具 (已修复) 3.BMI健康指数计算工具（已修复，需要验证） 4.多功能电表（已修复） 5.幸运数字与运势（已修复） 6.excel快查（功能被删除，后续添加新功能替代）7.二进制十进制互转8.运行hyperv开机bat（被移除)9.扫雷游戏（鸣谢@Hannnine）(需要修复)");
+        printf("请输入你要使用的功能：\n1.转换长度工具(已修复)  2.转换鞋码工具 (已修复) 3.BMI健康指数计算工具（已修复） 4.多功能电表（已修复） 5.幸运数字与运势（已修复） 6.excel快查（功能删除）7.二进制十进制互转（已修復）8.运行hyperv开机bat（被移除)9.扫雷游戏（鸣谢@Hannnine）(已修复)");
         scanf("%d",&grate);
         if (grate == 1)
         {
@@ -51,10 +51,10 @@ void main(void)
         // {
         //     hyperv2();
         // }
-        // else if(grate == 9)
-        // {
-        //     wansaolei();
-        // }
+        else if(grate == 9)
+        {
+            wansaolei();
+        }
         // else if(grate == 10)
         // {
         //     ssh();
