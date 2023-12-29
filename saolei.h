@@ -1,5 +1,5 @@
-#include "D:\Develop\CLanguageLearning-2\C_Primer_Plus\game\gameset.h"
-#include "D:\Develop\CLanguageLearning-2\C_Primer_Plus\game\gamecode.h"
+#include "D:\Develop\TRSTool\gameset.h"
+#include "D:\Develop\TRSTool\gamecode.h"
 #include<stdio.h>
 
 void game() {

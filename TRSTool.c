@@ -1,16 +1,16 @@
 #include<stdio.h>
 #include<windows.h>
 #include<time.h>
-#include<D:\Develop\TRSTool\TRSTool\translong.h>
-#include<D:\Develop\TRSTool\TRSTool\shoesize.h>
-#include<D:\Develop\TRSTool\TRSTool\bmiplus.h>
-#include<D:\Develop\TRSTool\TRSTool\eletric.h>
-#include<D:\Develop\TRSTool\TRSTool\lucky.h>
-#include<D:\Develop\TRSTool\TRSTool\excel.h>
-#include<D:\Develop\TRSTool\TRSTool\twobit.h>
-#include<D:\Develop\TRSTool\TRSTool\hyperv2.h>
-#include<D:\Develop\TRSTool\TRSTool\saolei.h>
-#include<D:\Develop\TRSTool\TRSTool\ssh.h>
+#include<D:\Develop\TRSTool\translong.h>
+#include<D:\Develop\TRSTool\shoesize.h>
+#include<D:\Develop\TRSTool\bmiplus.h>
+#include<D:\Develop\TRSTool\eletric.h>
+#include<D:\Develop\TRSTool\lucky.h>
+#include<D:\Develop\TRSTool\excel.h>
+#include<D:\Develop\TRSTool\twobit.h>
+#include<D:\Develop\TRSTool\hyperv2.h>
+#include<D:\Develop\TRSTool\saolei.h>
+#include<D:\Develop\TRSTool\ssh.h>
 void main(void)
 {
     int grate;
