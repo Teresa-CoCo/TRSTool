@@ -48,6 +48,9 @@ public class Shoesize {
 
         if (input == 4) { // input is eng
             temp = test + 18;
+//            new static fub(){
+//
+//            }
             china = temp;
             europe = china * 2 - 10;
             usa = (float) (china - 18 + 0.5);
