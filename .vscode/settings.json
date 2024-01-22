@@ -1,8 +1,0 @@
-{
-    "files.associations": {
-        "translong.h": "c",
-        "gamecode.h": "c",
-        "gameset.h": "c",
-        "processthreadsapi.h": "c"
-    }
-}
