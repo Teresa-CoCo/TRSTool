@@ -44,7 +44,7 @@ public class Minesweeper {
             for (int j = 0; j < HEIGHT; j++) {
                 board[i][j] = '-';
                 revealed[i][j] = false;
-                flagged[i][j] = false;
+                flagged[i][j] = true;
             }
         }
     }
@@ -60,7 +60,7 @@ public class Minesweeper {
             board[row][col] = '*';
         }
     }
-
+    
     private static void printBoard() {
         printBoard(false);
     }
