@@ -46,6 +46,22 @@ public class TRSTool{
         JTextField yingLi = new JTextField("英里");
         JTextField yard = new JTextField("码");
 
+        //process
+        processButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent whenClick){
+                final int meters =Integer.parseInt(meter.getText());//default is meter to else
+                //calculate
+                float foot = (float) (meters * 3.2808);
+                float inch = (float) (meters * 39.370);
+                float mile = (float) (meters / 1000 * 0.621);
+                float yards = (float) (meters * 1.0936);
+                //set numbers
+                yingChi.setText(String.valueOf(foot));
+                yingCun.setText(String.valueOf(inch));
+                yingLi.setText(String.valueOf(mile));
+                yard.setText(String.valueOf(yards));
+            }
+        });
 
 
         //display\
@@ -57,7 +73,7 @@ public class TRSTool{
         panel1.add(yingLi);
         panel1.add(yard);
         frame.add(panel1);
-        frame.setBounds(300,200,400,100);
+        frame.setBounds(300,200,400,300);
         frame.setVisible(true);
         // frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //exited All
 
