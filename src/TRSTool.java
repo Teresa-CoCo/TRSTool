@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.event.*;//Need add this module
 
 public class TRSTool{
-    public static void main(String[] arg){
+    public static void GUI(){
         System.out.printf("Test Button测试摁钮");
         JFrame frame = new JFrame("A Good example");
         JPanel panel1 = new JPanel();
