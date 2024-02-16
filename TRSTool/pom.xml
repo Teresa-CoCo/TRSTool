@@ -13,4 +13,30 @@
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
+
+<build>
+    <sourceDirectory>trstool\src\main\java</sourceDirectory>
+    <resources>
+        <resource>
+            <directory>trstool\src\main\resources</directory>
+        </resource>
+    </resources>
+    <!-- 插件配置 -->
+    <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version> <!-- 确保使用最新版本 -->
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib/</classpathPrefix>
+                            <mainClass>App</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+</build>
 </project>
