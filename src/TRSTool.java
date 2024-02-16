@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.event.*;//Need add this module
+import java.util.Random;
 
 public class TRSTool{
     public static void GUI(){
@@ -48,7 +49,7 @@ public class TRSTool{
             //add int in here can exit a=0 cycle
             public void actionPerformed(ActionEvent e){
                 //Here e means event but you can change that
-                building();
+                lucky();
             }
         });
         button7.addActionListener(new ActionListener(){
@@ -345,11 +346,57 @@ public class TRSTool{
         
     }
 
+    //lucky Function
+    public static void lucky(){
+        JFrame frame = new JFrame("看看你今天幸运吗");
+        JPanel panel = new JPanel();
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+        JLabel title = new JLabel("快来看看今天您的幸运数字是几！");
+        JLabel context = new JLabel("正在准备...");
+        JProgressBar progressBar = new JProgressBar(0, 10);
+
+        panel.add(title);
+        panel.add(context);
+        panel.add(progressBar);
+        frame.add(panel);
+        frame.setBounds(300, 200, 400, 300);
+        frame.setVisible(true);
+
+        Timer timer = new Timer(100, new ActionListener() {
+            private int count = 0;
+            private int phase = 1;
+            public void actionPerformed(ActionEvent e) {
+                if (phase == 1) {
+                    context.setText("正在初始化中......");
+                    if (count >= 10) {
+                        count = 0;
+                        phase = 2;
+                    }
+                } else if (phase == 2) {
+                    context.setText("生成随机种子中......");
+                    if (count >= 10) {
+                        ((Timer)e.getSource()).stop(); // 停止计时器
+                        long seed = System.currentTimeMillis();
+                        Random random = new Random(seed);
+                        int randomnumber = random.nextInt(9) + 1;
+                        context.setText(String.format("您今天的幸运数字是 %d 快分享给您的好友吧！", randomnumber));
+                        return;
+                    }
+                }
+                progressBar.setValue(count);
+                count++;
+            }
+        });
+        timer.setInitialDelay(0); // 立即开始
+        timer.start();
+    }
+
+    
 
     //Still Working......
-    
+
     public static void building(){
-        JFrame frame = new JFrame("BMI计算器");
+        JFrame frame = new JFrame("正在施工。。。。。。");
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel,BoxLayout.Y_AXIS));
         JLabel alarm = new JLabel("Still Working......");
