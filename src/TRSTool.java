@@ -6,17 +6,16 @@ public class TRSTool{
         System.out.printf("Test Button测试摁钮");
         JFrame frame = new JFrame("A Good example");
         JPanel panel1 = new JPanel();
-        JButton button1 = new JButton("Test Button测试摁钮");
         JButton button2 = new JButton("1.长度转换工具");
+        JButton button3 = new JButton("2.鞋码转换工具");
+        JButton button4 = new JButton("3.BMI计算工具");
+        JButton button5 = new JButton("4.多功能电表");
+        JButton button6 = new JButton("5.幸运数");
+        JButton button7 = new JButton("6.二进制转十进制");
+        JButton button8 = new JButton("7.玩扫雷");
+        JButton button9 = new JButton("8.打开记事本");
+        JButton button10 = new JButton("9.鞋码转换工具");
         //Add button listener
-        button1.addActionListener(new ActionListener(){
-            int a=0;
-            //add int in here can exit a=0 cycle
-            public void actionPerformed(ActionEvent e){
-                //Here e means event but you can change that
-                button1.setText("计数："+String.valueOf(a++));
-            }
-        });
         button2.addActionListener(new ActionListener(){
             //add int in here can exit a=0 cycle
             public void actionPerformed(ActionEvent e){
@@ -24,14 +23,31 @@ public class TRSTool{
                 TransLong();
             }
         });
-        panel1.add(button1);
+        button3.addActionListener(new ActionListener(){
+            //add int in here can exit a=0 cycle
+            public void actionPerformed(ActionEvent e){
+                //Here e means event but you can change that
+                shoeSize();
+            }
+        });
         panel1.add(button2);
+        panel1.add(button3);
+        panel1.add(button4);
+        panel1.add(button5);
+        panel1.add(button6);
+        panel1.add(button7);
+        panel1.add(button8);
+        panel1.add(button9);
+        panel1.add(button10);
         frame.add(panel1);
-        frame.setBounds(300,200,400,100);
+        frame.setBounds(300,200,400,200);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
     }
+
+    
+    //TransLong Function
     public static void TransLong() {
         //init
         
@@ -132,4 +148,107 @@ public class TRSTool{
         yingLi.setText(String.format("%.2f 英里", miles));
         yard.setText(String.format("%.2f 码", yards));
     }
+    //Shoesize Function
+    public static void shoeSize(){
+        // init
+        JFrame frame = new JFrame("鞋子尺码计算器");
+        JPanel panel = new JPanel();
+        panel.setLayout(new BoxLayout(panel,BoxLayout.Y_AXIS));
+        JLabel lableOne = new JLabel("请选择您输入的单位：");
+        JComboBox<String> unitSelector = new JComboBox<>(new String[]{"欧洲尺码", "中国尺码", "美国尺码", "英式尺码"});
+        JButton processButton = new JButton("启动！");
+        JTextField input = new JTextField("在这里输入");
+        JTextField ouZhou = new JTextField("");
+        JTextField zhongGuo = new JTextField("");
+        JTextField meiGuo = new JTextField("");
+        JTextField yingShi = new JTextField("");
+
+        //process
+        processButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent whenClick){
+                float inputValue = Float.parseFloat(input.getText());
+                String selected = (String)unitSelector.getSelectedItem();
+                transform(selected,inputValue,ouZhou,zhongGuo,meiGuo,yingShi);
+            }
+        });
+
+        //display
+       panel.add(lableOne);
+       panel.add(unitSelector);
+       panel.add(processButton);
+       panel.add(input);
+       panel.add(ouZhou);
+       panel.add(zhongGuo);
+       panel.add(meiGuo);
+        panel.add(yingShi);
+        frame.add(panel);
+        frame.setBounds(300, 200, 400, 300);
+        frame.setVisible(true);
+        
+    }
+    //Shoesize calculate
+    public static void transform(String unit,float value,JTextField ouZhou,JTextField zhongGuo,JTextField meiGuo,JTextField yingShi){
+        float ouzhou=0,zhonguo=0,meiguo=0,yingshi=0;
+        if (unit == "欧洲尺码") {
+            zhonguo = (float)(value+10)/2;
+            ouzhou = value;
+            meiguo = (float)(zhonguo-18+0.5);
+            yingshi = (float)zhonguo-18;
+        }
+        if(unit == "中国尺码"){
+            if(value > 100){
+                value = value/10;
+                zhonguo = value;
+            }else{
+                zhonguo=value;
+            }
+            ouzhou = zhonguo * 2-10;
+            meiguo = (float)(zhonguo-18+0.5);
+            yingshi = zhonguo-18;
+        }
+        if (unit == "美国尺码") {
+            zhonguo = (float)(value +18-0.5);
+            ouzhou = zhonguo * 2 -10;
+            meiguo = value;
+            yingshi = zhonguo-18;
+        }
+        if (unit == "英式尺码"){
+            zhonguo = value +18;
+            ouzhou = zhonguo * 2 -10;
+            meiguo = (float)(zhonguo-18+0.5);
+            yingshi = value;
+        }
+        //Update textField
+        ouZhou.setText(String.format("%.2f 码", ouzhou));
+        zhongGuo.setText(String.format("%.2f 厘米", zhonguo));
+        meiGuo.setText(String.format("%.2f 码", meiguo));
+        yingShi.setText(String.format("%.2f 码", yingshi));
+    }
+
+
+    //计算BMI函数
+    public static double calculateBMI(double weight, double height) {
+        if (height <= 0) {
+            System.out.println("身高必须大于零！");
+            return 0.0;
+        }
+
+        return weight / (height * height);
+    }
+
+    // 解释BMI的函数
+    public static void interpretBMI(double bmi) {
+        System.out.print("BMI指数的解释：");
+
+        if (bmi < 18.5) {
+            System.out.println("偏瘦");
+        } else if (bmi < 24.9) {
+            System.out.println("正常");
+        } else if (bmi < 29.9) {
+            System.out.println("超重");
+        } else {
+            System.out.println("肥胖");
+        }
+    }
+
 }
