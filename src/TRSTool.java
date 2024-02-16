@@ -30,6 +30,13 @@ public class TRSTool{
                 shoeSize();
             }
         });
+        button4.addActionListener(new ActionListener(){
+            //add int in here can exit a=0 cycle
+            public void actionPerformed(ActionEvent e){
+                //Here e means event but you can change that
+                BMI();
+            }
+        });
         panel1.add(button2);
         panel1.add(button3);
         panel1.add(button4);
@@ -148,7 +155,11 @@ public class TRSTool{
         yingLi.setText(String.format("%.2f 英里", miles));
         yard.setText(String.format("%.2f 码", yards));
     }
+
+
     //Shoesize Function
+
+
     public static void shoeSize(){
         // init
         JFrame frame = new JFrame("鞋子尺码计算器");
@@ -186,7 +197,11 @@ public class TRSTool{
         frame.setVisible(true);
         
     }
+
+
     //Shoesize calculate
+
+
     public static void transform(String unit,float value,JTextField ouZhou,JTextField zhongGuo,JTextField meiGuo,JTextField yingShi){
         float ouzhou=0,zhonguo=0,meiguo=0,yingshi=0;
         if (unit == "欧洲尺码") {
@@ -225,6 +240,42 @@ public class TRSTool{
         yingShi.setText(String.format("%.2f 码", yingshi));
     }
 
+    //BMI Function
+    public static void BMI(){
+        JFrame frame = new JFrame("BMI计算器");
+        JPanel panel = new JPanel();
+        panel.setLayout(new BoxLayout(panel,BoxLayout.Y_AXIS));
+        JLabel lableOne = new JLabel("请输入您的体重（KG）：");
+        JTextField Weight = new JTextField();
+        JLabel lableTwo = new JLabel("请输入您的身高（cm）：");
+        JTextField Height = new JTextField("");
+        JButton processButton = new JButton("启动！");
+        JLabel textBMI = new JLabel();
+        JLabel evaluate = new JLabel();
+
+        processButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent whenClick){
+                float tiZhong = Float.parseFloat(Weight.getText());
+                float shenGao = Float.parseFloat(Height.getText());
+                double bmi = calculateBMI(tiZhong, shenGao);
+                interpretBMI(bmi,evaluate);
+                textBMI.setText(String.format("您的BMI是 %.2f", bmi));
+                
+            }
+        });
+
+        //display
+        panel.add(lableOne);
+        panel.add(Weight);
+        panel.add(lableTwo);
+        panel.add(Height);
+        panel.add(processButton);
+        panel.add(textBMI);
+        panel.add(evaluate);
+        frame.add(panel);
+        frame.setBounds(300,200,400,300);
+        frame.setVisible(true);
+    }
 
     //计算BMI函数
     public static double calculateBMI(double weight, double height) {
@@ -237,18 +288,20 @@ public class TRSTool{
     }
 
     // 解释BMI的函数
-    public static void interpretBMI(double bmi) {
+    public static void interpretBMI(double bmi,JLabel evaluate) {
+        String out =  new String();
         System.out.print("BMI指数的解释：");
 
         if (bmi < 18.5) {
-            System.out.println("偏瘦");
+            out = "偏瘦";
         } else if (bmi < 24.9) {
-            System.out.println("正常");
+            out = "正常";
         } else if (bmi < 29.9) {
-            System.out.println("超重");
+            out ="超重";
         } else {
-            System.out.println("肥胖");
+            out = "肥胖";
         }
+        evaluate.setText(String.format(out));
     }
 
 }
