@@ -18,7 +18,7 @@ jobs:
     - name: Build JAR
       run: |
           cd src
-          javac Main.java
+          javac -encoding UTF-8 Main.java
           jar cvf Latest.jar *
     - name: Upload JAR as Artifact
       uses: actions/upload-artifact@v2
