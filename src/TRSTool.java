@@ -15,6 +15,7 @@ public class TRSTool{
         JButton button7 = new JButton("6.二进制转十进制(Finished)");
         JButton button8 = new JButton("7.玩扫雷(Finished)");
         JButton button9 = new JButton("8.打开记事本(Finished)");
+        JButton button10 = new JButton("9.十进制转二进制(Finished)");
         //Add button listener
         button2.addActionListener(new ActionListener(){
             //add int in here can exit a=0 cycle
@@ -48,6 +49,11 @@ public class TRSTool{
                 erToShi();
             }
         });
+        button10.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                shiToEr();
+            }
+        });
         button8.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 GUIMinesweeper.start();
@@ -70,6 +76,7 @@ public class TRSTool{
         panel1.add(button5);
         panel1.add(button6);
         panel1.add(button7);
+        panel1.add(button10);
         panel1.add(button8);
         panel1.add(button9);
         frame.add(panel1);
@@ -405,6 +412,35 @@ public class TRSTool{
         frame.setVisible(true);
     }
 
+    public static void shiToEr(){
+        JFrame frame = new JFrame("十进制转二进制");
+        JPanel panel = new JPanel();
+        panel.setLayout(new BoxLayout(panel,BoxLayout.Y_AXIS));
+        JLabel label0 = new JLabel("请输入您要转换的十进制数字：");
+        JTextField input = new JTextField();
+        JLabel label1 = new JLabel("转换后的二进制数字为：");
+        JTextField output = new JTextField();
+        JButton start = new JButton("启动！");
+        output.setEditable(false);
+
+        //process
+        start.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent whenClick){
+                int shuru = Integer.parseInt(input.getText());
+                convertDecimalToBinary(shuru, output);
+            }
+        });
+
+        panel.add(label0);
+        panel.add(input);
+        panel.add(label1);
+        panel.add(output);
+        panel.add(start);
+        frame.add(panel);
+        frame.setBounds(300,200,400,300);
+        frame.setVisible(true);
+    }
+
     public static void convertBinaryToDecimal(long n,JTextField output) {
         int decimalNumber = 0, i = 0, remainder;
         while (n != 0) {
@@ -414,6 +450,20 @@ public class TRSTool{
             ++i;
         }
         output.setText(String.format("%d", decimalNumber));
+    }
+
+    public static void convertDecimalToBinary(int n,JTextField output) {
+        long binaryNumber = 0;
+        int remainder, i = 1, step = 1;
+
+        while (n != 0) {
+            remainder = n % 2;
+            n /= 2;
+            binaryNumber += remainder * i;
+            i *= 10;
+        }
+
+        output.setText(String.format("%d", binaryNumber));
     }
 
     //Still Working......
