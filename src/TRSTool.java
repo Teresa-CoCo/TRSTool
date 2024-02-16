@@ -37,6 +37,47 @@ public class TRSTool{
                 BMI();
             }
         });
+        button5.addActionListener(new ActionListener(){
+            //add int in here can exit a=0 cycle
+            public void actionPerformed(ActionEvent e){
+                //Here e means event but you can change that
+                building();
+            }
+        });
+        button6.addActionListener(new ActionListener(){
+            //add int in here can exit a=0 cycle
+            public void actionPerformed(ActionEvent e){
+                //Here e means event but you can change that
+                building();
+            }
+        });
+        button7.addActionListener(new ActionListener(){
+            //add int in here can exit a=0 cycle
+            public void actionPerformed(ActionEvent e){
+                //Here e means event but you can change that
+                building();
+            }
+        });
+        button8.addActionListener(new ActionListener(){
+            //add int in here can exit a=0 cycle
+            public void actionPerformed(ActionEvent e){
+                //Here e means event but you can change that
+                building();
+            }
+        });button9.addActionListener(new ActionListener(){
+            //add int in here can exit a=0 cycle
+            public void actionPerformed(ActionEvent e){
+                //Here e means event but you can change that
+                building();
+            }
+        });
+        button10.addActionListener(new ActionListener(){
+            //add int in here can exit a=0 cycle
+            public void actionPerformed(ActionEvent e){
+                //Here e means event but you can change that
+                building();
+            }
+        });
         panel1.add(button2);
         panel1.add(button3);
         panel1.add(button4);
@@ -302,6 +343,20 @@ public class TRSTool{
             evaluate.setText(String.format(out));
             }
         
+    }
+
+
+    //Still Working......
+    
+    public static void building(){
+        JFrame frame = new JFrame("BMI计算器");
+        JPanel panel = new JPanel();
+        panel.setLayout(new BoxLayout(panel,BoxLayout.Y_AXIS));
+        JLabel alarm = new JLabel("Still Working......");
+        panel.add(alarm);
+        frame.add(panel);
+        frame.setBounds(300,200,400,300);
+        frame.setVisible(true);
     }
 
 
