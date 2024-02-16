@@ -1,0 +1,26 @@
+name: Build Windows EXE
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up JDK 
+      uses: actions/setup-java@v1
+      with:
+        java-version: '11'
+        distribution: 'adopt'
+
+    - name: Build JAR
+      run: |
+          javac /src/Main.java
+          jar cvf YourJar.jar *
+    - name: Upload EXE as Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: jar
+        path: YourJar.jar
