@@ -1,11 +1,11 @@
 import javax.swing.*;
 import java.awt.event.*;//Need add this module
+import java.io.IOException;
 import java.util.Random;
 
 public class TRSTool{
     public static void GUI(){
-        System.out.printf("Test Button测试摁钮");
-        JFrame frame = new JFrame("A Good example");
+        JFrame frame = new JFrame("TRSTool Java GUI");
         JPanel panel1 = new JPanel();
         JButton button2 = new JButton("1.长度转换工具");
         JButton button3 = new JButton("2.鞋码转换工具");
@@ -63,13 +63,20 @@ public class TRSTool{
             //add int in here can exit a=0 cycle
             public void actionPerformed(ActionEvent e){
                 //Here e means event but you can change that
-                building();
+                GUIMinesweeper.start();
             }
         });button9.addActionListener(new ActionListener(){
             //add int in here can exit a=0 cycle
-            public void actionPerformed(ActionEvent e){
+            public void actionPerformed(ActionEvent ef){
                 //Here e means event but you can change that
-                building();
+                try {
+                // 创建并启动ProcessBuilder实例以运行记事本
+                ProcessBuilder pb = new ProcessBuilder("notepad.exe");
+                pb.start();
+                } catch (IOException e) {
+                // 处理异常
+                e.printStackTrace();
+        }
             }
         });
         button10.addActionListener(new ActionListener(){
