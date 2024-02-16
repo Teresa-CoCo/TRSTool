@@ -17,10 +17,11 @@ jobs:
 
     - name: Build JAR
       run: |
-          javac /src/Main.java
-          jar cvf YourJar.jar *
-    - name: Upload EXE as Artifact
+          cd src
+          javac Main.java
+          jar cvf Latest.jar *
+    - name: Upload JAR as Artifact
       uses: actions/upload-artifact@v2
       with:
         name: jar
-        path: YourJar.jar
+        path: Latest.jar
