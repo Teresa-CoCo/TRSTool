@@ -247,7 +247,7 @@ public class TRSTool{
         panel.setLayout(new BoxLayout(panel,BoxLayout.Y_AXIS));
         JLabel lableOne = new JLabel("请输入您的体重（KG）：");
         JTextField Weight = new JTextField();
-        JLabel lableTwo = new JLabel("请输入您的身高（cm）：");
+        JLabel lableTwo = new JLabel("请输入您的身高（m）：");
         JTextField Height = new JTextField("");
         JButton processButton = new JButton("启动！");
         JLabel textBMI = new JLabel();
@@ -257,9 +257,9 @@ public class TRSTool{
             public void actionPerformed(ActionEvent whenClick){
                 float tiZhong = Float.parseFloat(Weight.getText());
                 float shenGao = Float.parseFloat(Height.getText());
-                double bmi = calculateBMI(tiZhong, shenGao);
-                interpretBMI(bmi,evaluate);
-                textBMI.setText(String.format("您的BMI是 %.2f", bmi));
+                calculateBMI(tiZhong, shenGao,textBMI,evaluate);
+                
+                
                 
             }
         });
@@ -278,30 +278,31 @@ public class TRSTool{
     }
 
     //计算BMI函数
-    public static double calculateBMI(double weight, double height) {
-        if (height <= 0) {
-            System.out.println("身高必须大于零！");
-            return 0.0;
+    public static void calculateBMI(double weight, double height, JLabel textBMI, JLabel evaluate) {
+        if (height >= 5) {
+            height = height/100;
         }
 
-        return weight / (height * height);
+        if (height <= 0 || weight <=0) {
+            textBMI.setText(String.format("输入有误"));
+        }else{
+            double bmi =weight / (height * height);
+            textBMI.setText(String.format("您的BMI是 %.2f", bmi));
+
+            String out =  new String();
+            if (bmi < 18.5) {
+                out = "偏瘦";
+            } else if (bmi < 24.9) {
+                out = "正常";
+            } else if (bmi < 29.9) {
+                out ="超重";
+            } else {
+                out = "肥胖";
+            }
+            evaluate.setText(String.format(out));
+            }
+        
     }
 
-    // 解释BMI的函数
-    public static void interpretBMI(double bmi,JLabel evaluate) {
-        String out =  new String();
-        System.out.print("BMI指数的解释：");
-
-        if (bmi < 18.5) {
-            out = "偏瘦";
-        } else if (bmi < 24.9) {
-            out = "正常";
-        } else if (bmi < 29.9) {
-            out ="超重";
-        } else {
-            out = "肥胖";
-        }
-        evaluate.setText(String.format(out));
-    }
 
 }
