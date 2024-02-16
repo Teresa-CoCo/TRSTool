@@ -7,15 +7,14 @@ public class TRSTool{
     public static void GUI(){
         JFrame frame = new JFrame("TRSTool Java GUI");
         JPanel panel1 = new JPanel();
-        JButton button2 = new JButton("1.长度转换工具");
-        JButton button3 = new JButton("2.鞋码转换工具");
-        JButton button4 = new JButton("3.BMI计算工具");
+        JButton button2 = new JButton("1.长度转换工具(Finished)");
+        JButton button3 = new JButton("2.鞋码转换工具(Finished)");
+        JButton button4 = new JButton("3.BMI计算工具(Finished)");
         JButton button5 = new JButton("4.多功能电表");
-        JButton button6 = new JButton("5.幸运数");
-        JButton button7 = new JButton("6.二进制转十进制");
-        JButton button8 = new JButton("7.玩扫雷");
-        JButton button9 = new JButton("8.打开记事本");
-        JButton button10 = new JButton("9.鞋码转换工具");
+        JButton button6 = new JButton("5.幸运数(Finished)");
+        JButton button7 = new JButton("6.二进制转十进制(Finished)");
+        JButton button8 = new JButton("7.玩扫雷(Finished)");
+        JButton button9 = new JButton("8.打开记事本(Finished)");
         //Add button listener
         button2.addActionListener(new ActionListener(){
             //add int in here can exit a=0 cycle
@@ -25,50 +24,36 @@ public class TRSTool{
             }
         });
         button3.addActionListener(new ActionListener(){
-            //add int in here can exit a=0 cycle
             public void actionPerformed(ActionEvent e){
-                //Here e means event but you can change that
                 shoeSize();
             }
         });
         button4.addActionListener(new ActionListener(){
-            //add int in here can exit a=0 cycle
             public void actionPerformed(ActionEvent e){
-                //Here e means event but you can change that
                 BMI();
             }
         });
         button5.addActionListener(new ActionListener(){
-            //add int in here can exit a=0 cycle
             public void actionPerformed(ActionEvent e){
-                //Here e means event but you can change that
                 building();
             }
         });
         button6.addActionListener(new ActionListener(){
-            //add int in here can exit a=0 cycle
             public void actionPerformed(ActionEvent e){
-                //Here e means event but you can change that
                 lucky();
             }
         });
         button7.addActionListener(new ActionListener(){
-            //add int in here can exit a=0 cycle
             public void actionPerformed(ActionEvent e){
-                //Here e means event but you can change that
-                building();
+                erToShi();
             }
         });
         button8.addActionListener(new ActionListener(){
-            //add int in here can exit a=0 cycle
             public void actionPerformed(ActionEvent e){
-                //Here e means event but you can change that
                 GUIMinesweeper.start();
             }
         });button9.addActionListener(new ActionListener(){
-            //add int in here can exit a=0 cycle
             public void actionPerformed(ActionEvent ef){
-                //Here e means event but you can change that
                 try {
                 // 创建并启动ProcessBuilder实例以运行记事本
                 ProcessBuilder pb = new ProcessBuilder("notepad.exe");
@@ -79,13 +64,6 @@ public class TRSTool{
         }
             }
         });
-        button10.addActionListener(new ActionListener(){
-            //add int in here can exit a=0 cycle
-            public void actionPerformed(ActionEvent e){
-                //Here e means event but you can change that
-                building();
-            }
-        });
         panel1.add(button2);
         panel1.add(button3);
         panel1.add(button4);
@@ -94,7 +72,6 @@ public class TRSTool{
         panel1.add(button7);
         panel1.add(button8);
         panel1.add(button9);
-        panel1.add(button10);
         frame.add(panel1);
         frame.setBounds(300,200,400,200);
         frame.setVisible(true);
@@ -398,7 +375,46 @@ public class TRSTool{
         timer.start();
     }
 
-    
+    //erToShi
+    public static void erToShi(){
+        JFrame frame = new JFrame("二进制转十进制");
+        JPanel panel = new JPanel();
+        panel.setLayout(new BoxLayout(panel,BoxLayout.Y_AXIS));
+        JLabel label0 = new JLabel("请输入您要转换的二进制数字：");
+        JTextField input = new JTextField();
+        JLabel label1 = new JLabel("转换后的十进制数字为：");
+        JTextField output = new JTextField();
+        JButton start = new JButton("启动！");
+        output.setEditable(false);
+
+        //process
+        start.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent whenClick){
+                int shuru = Integer.parseInt(input.getText());
+                convertBinaryToDecimal(shuru, output);
+            }
+        });
+
+        panel.add(label0);
+        panel.add(input);
+        panel.add(label1);
+        panel.add(output);
+        panel.add(start);
+        frame.add(panel);
+        frame.setBounds(300,200,400,300);
+        frame.setVisible(true);
+    }
+
+    public static void convertBinaryToDecimal(long n,JTextField output) {
+        int decimalNumber = 0, i = 0, remainder;
+        while (n != 0) {
+            remainder = (int) (n % 10);
+            n /= 10;
+            decimalNumber += remainder * Math.pow(2, i);
+            ++i;
+        }
+        output.setText(String.format("%d", decimalNumber));
+    }
 
     //Still Working......
 
