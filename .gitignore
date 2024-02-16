@@ -24,6 +24,6 @@ bin/
 
 ### VS Code ###
 .vscode/
-
+/TRSTool_Java_GUI.exe
 ### Mac OS ###
 .DS_Store
