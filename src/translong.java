@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Translong {
+public class Translong {
     public static void translong()
     {
         Scanner scanner = new Scanner(System.in);
