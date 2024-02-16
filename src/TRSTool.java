@@ -5,17 +5,17 @@ import java.util.Random;
 
 public class TRSTool{
     public static void GUI(){
-        JFrame frame = new JFrame("TRSTool Java GUI");
+        JFrame frame = new JFrame("TRSTool Java GUI  全部功能正常运行！");
         JPanel panel1 = new JPanel();
-        JButton button2 = new JButton("1.长度转换工具(Finished)");
-        JButton button3 = new JButton("2.鞋码转换工具(Finished)");
-        JButton button4 = new JButton("3.BMI计算工具(Finished)");
+        JButton button2 = new JButton("1.长度转换工具");
+        JButton button3 = new JButton("2.鞋码转换工具");
+        JButton button4 = new JButton("3.BMI计算工具");
         JButton button5 = new JButton("4.多功能电表");
-        JButton button6 = new JButton("5.幸运数(Finished)");
-        JButton button7 = new JButton("6.二进制转十进制(Finished)");
-        JButton button8 = new JButton("7.玩扫雷(Finished)");
-        JButton button9 = new JButton("8.打开记事本(Finished)");
-        JButton button10 = new JButton("9.十进制转二进制(Finished)");
+        JButton button6 = new JButton("5.幸运数");
+        JButton button7 = new JButton("6.二进制转十进制");
+        JButton button8 = new JButton("7.玩扫雷");
+        JButton button9 = new JButton("8.打开记事本");
+        JButton button10 = new JButton("9.十进制转二进制");
         //Add button listener
         button2.addActionListener(new ActionListener(){
             //add int in here can exit a=0 cycle
@@ -36,7 +36,7 @@ public class TRSTool{
         });
         button5.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                building();
+                Electric();
             }
         });
         button6.addActionListener(new ActionListener(){
@@ -454,7 +454,7 @@ public class TRSTool{
 
     public static void convertDecimalToBinary(int n,JTextField output) {
         long binaryNumber = 0;
-        int remainder, i = 1, step = 1;
+        int remainder, i = 1;
 
         while (n != 0) {
             remainder = n % 2;
@@ -464,6 +464,78 @@ public class TRSTool{
         }
 
         output.setText(String.format("%d", binaryNumber));
+    }
+    public static void Electric(){
+        JFrame frame = new JFrame("多功能电表");
+        JPanel panel = new JPanel();
+        panel.setLayout(new BoxLayout(panel,BoxLayout.Y_AXIS));
+        JLabel label0 = new JLabel("请选择档位（即要求的项目）");
+        JComboBox<String> selector = new JComboBox<>(new String[]{"安培档","电压档","欧姆档"});
+        JButton start = new JButton("启动！");
+        JLabel label1 = new JLabel("电流：");
+        JTextField anPei = new JTextField();
+        JLabel label2 = new JLabel("电压：");
+        JTextField dianYa = new JTextField();
+        JLabel label3 = new JLabel("电阻：");
+        JTextField ouMu =new JTextField();
+
+        //process
+        start.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent whenClick){
+                float input_anpei = 0,input_dianya =0,input_oumu=0;
+                String selected = (String)selector.getSelectedItem();
+            if (selected == "安培档") {
+                input_dianya=Float.parseFloat(dianYa.getText());
+                input_oumu=Float.parseFloat(ouMu.getText());
+                input_anpei = input_dianya/input_oumu;
+            }
+            if (selected == "电压档") {
+                input_oumu=Float.parseFloat(ouMu.getText());
+                input_anpei=Float.parseFloat(anPei.getText());
+                input_dianya = input_anpei * input_oumu;
+            }
+            if (selected == "欧姆档") {
+                input_anpei=Float.parseFloat(anPei.getText());
+                input_dianya=Float.parseFloat(dianYa.getText());
+                input_oumu = input_dianya / input_anpei;
+            }
+            anPei.setText(String.format("%.2f 安培（A）", input_anpei));
+            dianYa.setText(String.format("%.2f 伏特（V）", input_dianya));
+            ouMu.setText(String.format("%.2f 欧姆（Ω）", input_oumu));
+            
+            }
+        });
+
+
+        panel.add(label0);
+        panel.add(selector);
+        panel.add(start);
+        panel.add(label1);
+        panel.add(anPei);
+        panel.add(label2);
+        panel.add(dianYa);
+        panel.add(label3);
+        panel.add(ouMu);
+        frame.add(panel);
+        frame.setBounds(300,200,400,300);
+        frame.setVisible(true);
+    }
+    public static void Electric_convertion(String select,float input_anpei,float input_dianya,float input_oumu,JTextField anpei,JTextField dianya,JTextField oumu){
+        final float ANPEICAL =input_dianya/input_oumu;
+        final float DIANYACAL = input_anpei * input_oumu;
+        final float OUMUCAL =input_dianya / input_anpei;
+        if (select == "安培档") {
+            input_anpei = ANPEICAL;
+        }
+        if (select == "电压档") {
+            input_dianya = DIANYACAL;
+        }
+        if (select == "欧姆档") {
+            input_oumu = OUMUCAL;
+        }
+        anpei.setText(String.format("%.2f 安培（A）", input_anpei));
+        dianya.setText(String.format("%.2f 伏特（V）", input_dianya));
+        oumu.setText(String.format("%.2f 欧姆（Ω）", input_oumu));
     }
 
     //Still Working......
