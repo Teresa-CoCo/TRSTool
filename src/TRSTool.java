@@ -16,6 +16,7 @@ public class TRSTool{
         JButton button8 = new JButton("7.玩扫雷");
         JButton button9 = new JButton("8.打开记事本");
         JButton button10 = new JButton("9.十进制转二进制");
+        JButton button11 = new JButton("10.二阶矩阵计算");
         //Add button listener
         button2.addActionListener(new ActionListener(){
             //add int in here can exit a=0 cycle
@@ -70,6 +71,11 @@ public class TRSTool{
         }
             }
         });
+        button11.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                erjie();
+            }
+        });
         panel1.add(button2);
         panel1.add(button3);
         panel1.add(button4);
@@ -79,6 +85,7 @@ public class TRSTool{
         panel1.add(button10);
         panel1.add(button8);
         panel1.add(button9);
+        panel1.add(button11);
         frame.add(panel1);
         frame.setBounds(300,200,400,200);
         frame.setVisible(true);
@@ -520,26 +527,44 @@ public class TRSTool{
         frame.setBounds(300,200,400,300);
         frame.setVisible(true);
     }
-    public static void Electric_convertion(String select,float input_anpei,float input_dianya,float input_oumu,JTextField anpei,JTextField dianya,JTextField oumu){
-        final float ANPEICAL =input_dianya/input_oumu;
-        final float DIANYACAL = input_anpei * input_oumu;
-        final float OUMUCAL =input_dianya / input_anpei;
-        if (select == "安培档") {
-            input_anpei = ANPEICAL;
-        }
-        if (select == "电压档") {
-            input_dianya = DIANYACAL;
-        }
-        if (select == "欧姆档") {
-            input_oumu = OUMUCAL;
-        }
-        anpei.setText(String.format("%.2f 安培（A）", input_anpei));
-        dianya.setText(String.format("%.2f 伏特（V）", input_dianya));
-        oumu.setText(String.format("%.2f 欧姆（Ω）", input_oumu));
-    }
 
     //Still Working......
 
+    public static void erjie(){
+        JFrame frame = new JFrame("二阶矩阵计算器");
+        JPanel panel = new JPanel();
+        panel.setLayout(new BoxLayout(panel,BoxLayout.Y_AXIS));
+        JLabel label0 = new JLabel("1,1的位置");
+        JTextField oneone = new JTextField();
+        JLabel label1 = new JLabel("1,2的位置");
+        JTextField onetwo = new JTextField();
+        JLabel label2 = new JLabel("2,1的位置");
+        JTextField twoone = new JTextField();
+        JLabel label3 = new JLabel("2,2的位置");
+        JTextField twotwo = new JTextField();
+        JButton start = new JButton("启动");
+        JTextField result = new JTextField();
+        start.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                int resultt = (Integer.parseInt(oneone.getText()) * Integer.parseInt(twotwo.getText()))-(Integer.parseInt(onetwo.getText()) * Integer.parseInt(twoone.getText()));
+                result.setText(String.format(String.valueOf(resultt)));
+            }
+        });
+
+        panel.add(label0);
+        panel.add(oneone);
+        panel.add(label1);
+        panel.add(onetwo);
+        panel.add(label2);
+        panel.add(twoone);
+        panel.add(label3);
+        panel.add(twotwo);
+        panel.add(start);
+        panel.add(result);
+        frame.add(panel);
+        frame.setBounds(300,200,400,300);
+        frame.setVisible(true);
+    }
     public static void building(){
         JFrame frame = new JFrame("正在施工。。。。。。");
         JPanel panel = new JPanel();
