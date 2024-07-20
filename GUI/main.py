@@ -42,8 +42,6 @@ def take_screenshot():
     try:
         # 使用PIL的ImageGrab模块进行屏幕截图
         screenshot = ImageGrab.grab()
-
-        # 保存截图为文件，这里可以根据需要修改保存路径和文件名
         screenshot.save("screenshot.png")
 
         messagebox.showinfo("截图成功", "截图已保存为 screenshot.png")
@@ -95,8 +93,6 @@ def ImageUnderstand(url1):
                 }
                 # 拼接鉴权参数，生成url
                 url = self.ImageUnderstanding_url + '?' + urlencode(v)
-                # print(url)
-                # 此处打印出建立连接时候的url,参考本demo的时候可取消上方打印的注释，比对相同参数时生成的url与自己代码生成的url是否一致
                 return url
 
         # 收到websocket错误的处理
@@ -135,9 +131,7 @@ def ImageUnderstand(url1):
                     ws.close()
 
         def gen_params(appid, question):
-            """
-            通过appid和用户的提问来生成请参数
-            """
+
 
             data = {
                 "header": {
@@ -277,7 +271,7 @@ def screenshot_and_ask():
 root = tk.Tk()
 root.title("NewTRSTool")
 
-# root.iconbitmap('logo.ico')  # 替换 'logo.ico' 为你的ICO文件路径
+# root.iconbitmap('logo.ico')
 
 root.resizable(False, False)
 
